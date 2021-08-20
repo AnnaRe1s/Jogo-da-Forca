@@ -1,0 +1,109 @@
+/* Cores e tamanho de letrdas usadas no figma
+botao iniciar
+    botao-cor: 00C6E1 transparencia 40% blur: 20  y: 4  x: 0 
+    letra-  cor:white  tamanho:50
+botao de adicionar letra 
+    botao- cor: 1EB511 transparencia 25% blur: 4  y: 4  x: 0 
+    letra - cor: white  tamanho:15
+barra de letras erradas
+    barra-  cor: E10000 transparencia 14%
+    letra: black
+tamanho das letras
+    nome do jogo tamanho:60 
+    dica  tamanho:25 
+    letras: 40 */ 
+
+body {
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+}
+
+
+/* PAGINA INICIAL */
+.logo {
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 900;
+    margin-bottom: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    height: 20%;
+}
+
+.btnStart {
+    background-color:#00C6E1;
+    border: none ;
+    border-radius: 20px;
+    box-shadow: 4px 4px 20px rgba(00, 00, 00, .2);
+    height: 50px;
+    width: 300px;
+    margin: 8% 40%;
+    margin-bottom: 0;
+
+    /* text */
+    font-family: 'Roboto Slab', serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+   
+} 
+
+
+/* PAGINA DE JOGO */
+
+.conteudo {
+    display: flex;
+    
+}
+
+.forca {
+    margin: 0 5%;
+}
+
+.textForca {
+    width: 700px;
+    margin: 5% 0;
+}
+
+.textForca h2 {
+    margin: 10% 0;
+    margin-bottom: 0;
+    padding: 5% 0;
+    font-weight: 100;
+}
+
+.textForca h4 {
+    background-color: #e100001f;
+    width: 100%;
+    padding-left: 15px;
+}
+
+.inputLetra {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    background-color: rgba(169, 169, 169, 0.322);
+    border: none;
+    height: 35px;
+    padding-left: 15px;
+}
+
+.textForca button {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    color: white;
+
+    background-color:#1EB511;
+    border: none;
+    border-radius: 20px;
+    width: 15%;
+    height: 35px;
+
+    margin: 25px;
+
+}
