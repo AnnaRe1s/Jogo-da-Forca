@@ -62,7 +62,7 @@ h1 {
     
 }
 
-.forca {
+.hangMan {
     margin: 0 5%;
 }
 
@@ -91,6 +91,7 @@ h1 {
     border: none;
     height: 35px;
     padding-left: 15px;
+    
 }
 
 .textForca button {
