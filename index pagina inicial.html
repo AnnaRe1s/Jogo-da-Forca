@@ -13,7 +13,9 @@
     <!-- css -->
     <link rel="stylesheet" href="CSS/style.css">
 
-    <!-- BONUS inserir imagenzinha de forca  -->
+    <!-- favitcon  -->
+    <link rel="shortcut icon" href="images/gallows - favitcon.png" type="image/x-icon">
+
     <title>Jogo da forca</title>
 </head>
 
@@ -22,16 +24,18 @@
     <!-- Imagem e texto da forca -->
     <div class="logo">
         <h1>Jogo da Forca</h1>
-        <img src="IMAGENS/gallows - image.png" alt="Ilustracao de uma forca">
+        <img src="images/gallows - image.png" alt="Ilustracao de uma forca">
     </div> 
 
     <!-- botao para trocar de pagina -->
-    <button id="btnStart" class="btnStart" >let`s Bora!</button>
-    <!-- pq o botao funciona maaas nao aparece o segundo html -->
-
-
+    <!-- <button id="btnStart" class="btnStart" >let`s Bora!</button> -->
+    <button class="btnStart" onclick="start()">let`s Bora!</button>
     
     <!-- JavaScript -->
-    <script src="JS/logica.js"></script>
+      <script>
+        function start() {
+            location.href="pagina_de_jogo.html"
+        }
+    </script>
 </body>
 </html>

@@ -20,11 +20,13 @@ body {
 
 
 /* PAGINA INICIAL */
-.logo {
+
+.logo{
     text-align: center;
 }
 
 h1 {
+    margin-top: 25px;
     font-size: 60px;
     font-weight: 900;
     margin-bottom: 0%;
@@ -32,9 +34,6 @@ h1 {
     justify-content: center;
 }
 
-.logo img {
-    height: 20%;
-}
 
 .btnStart {
     background-color:#00C6E1;
@@ -57,6 +56,7 @@ h1 {
 
 /* PAGINA DE JOGO */
 
+
 .conteudo {
     display: flex;
     
@@ -78,13 +78,18 @@ h1 {
     font-weight: 100;
 }
 
-.textForca h4 {
+.textForca h3 {
     background-color: #e100001f;
     width: 100%;
-    padding-left: 15px;
+    padding: 0 15px;
+    font-size: 20px;
 }
 
-.inputLetra {
+.textForca span {
+    padding: 0 5px;
+}
+
+.input  {
     font-family: 'Roboto Slab', serif;
     font-size: 16px;
     background-color: rgba(169, 169, 169, 0.322);
@@ -94,7 +99,7 @@ h1 {
     
 }
 
-.textForca button {
+.insert{
     font-family: 'Roboto Slab', serif;
     font-size: 16px;
     color: white;
@@ -106,5 +111,88 @@ h1 {
     height: 35px;
 
     margin: 25px;
+
+    cursor: pointer;
+}
+
+
+.guess{
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    color: white;
+
+    background-color:#1157da;
+    border: none;
+    border-radius: 20px;
+    width: 15%;
+    height: 35px;
+
+    margin: 25px;
+
+    cursor: pointer;
+
+}
+
+
+/* Modal */
+
+
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(00, 00, 00, 0.5);   
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  e para aparecer o modal de vitoria ou perda */
+.modalBackground.show {
+    display: flex;
+}
+
+
+.display {
+    background: white;
+    width: 40%;
+    min-width: 300px;   
+    text-align: center;
+    padding: 35px; 
+    box-shadow: 6px 6px 6px 6px rgba(00, 00, 00, .1);
+}
+
+/* animacao para aparecer o modal de perda ou vitoria */
+
+@keyframes displays {
+    from {
+        opacity: 0;
+        transform:translate3d(0 -60px 0) ;
+    }
+    to {
+    opacity: 1;
+    transform: translate3d(0 0 0);
+
+    }
+}
+
+.show .display {
+    animation: displays .3s;
+}
+ 
+.display button {
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    color: white;
+
+    background-color:#1157da;
+    box-shadow: 0px 4px 4px 2px rgba(00, 00, 00, .3);
+    border: none;
+    border-radius: 20px;
+    width: 50%;
+    height: 50px;
+    cursor: pointer;
 
 }

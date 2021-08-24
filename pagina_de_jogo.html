@@ -14,14 +14,16 @@
     <!-- css -->
     <link rel="stylesheet" href="CSS/style.css">
     
-    <!-- link da favitcon -->
+    <!-- favitcon -->
+    <link rel="shortcut icon" href="images/gallows - favitcon.png" type="image/x-icon">
+
     <title>Jogo da Forca</title>
 </head>
 
 <body>
-
-    <h1>Jogo da forca</h1>
-    <div class="conteudo">
+    <!-- pagina de jogo -->
+        <h1>Jogo da forca</h1>
+        <div class="conteudo">
 
         <div class="hangMan">  
             <img id = "hangMan" src="images/gallows - image.png" alt="gallows">
@@ -30,25 +32,48 @@
 
         <div class="textForca">
 
-            <h3>Dica:<span id="tips"> arr </span></h3>
+            <h4>Dica:<span id="tips"></span></h4>
 
             <h2 id= "words">_</h2>
 
-            <h4>Tentativas:<span id = attempts></span></h4>
-                
-            <input id="letterInput" class="inputLetra" for="adicionar uma letra" maxlength="1" type="text"  placeholder="Adicione uma letra" >
-            <button id="insert">inserir</button>
-        
+            <h3>Tentativas:<span id = attempts></span></h3>
+                    
+            <input id="letterInput" class="input" for="adicionar uma letra" maxlength="1" type="text"  placeholder="Adicione uma letra" >
+            <button id="insert" class="insert" onclick="validateInput()">Adicionar</button>
+            <p id="status"></p>
+
+            <div>
+                <input id="guessInput" class="input" for="Adivinhar uma palavra" type="text"  placeholder="Adivinhar uma palavra" >
+                <button id="btnGuess" class="guess" onclick="validateInput()">Adivinhar</button>
+            </div>
+            
         </div> 
 
-    </div>  
+    </div> 
+
+
+    <!-- modais para aparecer junto com a condicao de perda o vitoria -->
+    <!-- modal de Vitoria  -->
+    <div id="modalVitory" class="modalBackground">
+        <div class="display"> 
+            <img src="images/you win!.png" alt="Voce ganhou o jogo">
+            <button class="btnModal">Jogar Novamente</button>
+        </div> 
+    </div>
     
-    <!-- JavaScript -->
-    <script src="js/data.js"></script>
-    <script src="js/logica.js"></script>
-    <script src="js/testando.js"></script>
-    <script src="js/utils.js"></script>
+
+     <!-- modal de derrota  -->
+     <div id="modalDerrota" class="modalBackground">
+        <div class="display"> 
+            <img src="images/you lost.png" alt="Voce perdeu">
+            <button class="btnModal">Tentar Novamente</button>
+        </div> 
+    </div>
+    
 
     
+    <!-- javaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/testando.js"></script>
 </body>
 </html>
