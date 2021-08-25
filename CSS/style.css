@@ -202,16 +202,3 @@ h1{
     cursor: pointer;
 }
 
-
-@media only screen and (max-whidth: 1000px) {
-
-    html {
-        font-size: 13px;
-    }
-    .container{
-       display: flex;
-       flex-direction: column; 
-    }
-    
-}
- 
