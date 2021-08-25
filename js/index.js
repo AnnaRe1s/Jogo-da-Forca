@@ -51,7 +51,7 @@ function restart() {
    tips.innerHTML = " " + game.getCategory()
    words.innerHTML = game.getHiddenWord()
    attempts.innerHTML = ""
-   hangman.setAttribute("src", "./images/gallows_image.png")
+   hangman.setAttribute("src", "../images/gallows_image.png")
    letterInput.value = ""
    letterInput.style.border = "none"
    guessInput.value = ""
