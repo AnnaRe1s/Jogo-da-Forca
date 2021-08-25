@@ -23,14 +23,13 @@
 <body>
     <!-- pagina de jogo -->
         <h1>Jogo da forca</h1>
-        <div class="conteudo">
+<div class="container">
 
-        <div class="hangMan">  
+        <!-- <div class="hangMan">   -->
             <img id = "hangman" src="./images/gallows_image.png" alt="gallows">
+        <!-- </div> -->
 
-        </div>
-
-        <div class="textForca">
+        <div class="play">
 
             <h4>Dica:<span id="tips"></span></h4>
 
@@ -39,13 +38,12 @@
             <h3>Tentativas:<span id = attempts></span></h3>
                     
             <input id="letterInput" class="input" for="adicionar uma letra" maxlength="1"  type="text"  placeholder="Adicione uma letra" >
+
             <button id="insert" class="insert" onclick="validateInput()">Adicionar</button>
             <p id="status"></p>
 
-            <div>
-                <input id="guessInput" class="input" for="Adivinhar palavra" type="text"  placeholder="Adivinhar uma palavra" >
-                <button id="btnGuess" class="guess" onclick="validateInput()">Adivinhar</button>
-            </div>
+            <input id="guessInput" class="input" for="Adivinhar palavra" type="text"  placeholder="Adivinhar uma palavra" >
+            <button id="btnGuess" class="guess" onclick="validateInput()">Adivinhar</button>
             <p id="status"></p>
 
         </div> 

@@ -15,7 +15,8 @@ tamanho das letras
 
 body {
     font-family: 'Roboto Slab', serif;
-    margin: 0;
+    width: 100vw;
+    height: 100vh; 
 }
 
 
@@ -23,15 +24,15 @@ body {
 
 .logo{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
-    margin-top: 25px;
     font-size: 60px;
     font-weight: 900;
     margin-bottom: 0%;
-    display: flex;
-    justify-content: center;
 }
 
 
@@ -40,53 +41,65 @@ h1 {
     border: none ;
     border-radius: 20px;
     box-shadow: 4px 4px 20px rgba(00, 00, 00, .2);
+    margin: 5%;
     height: 50px;
     width: 300px;
-    margin: 8% 40%;
-    margin-bottom: 0;
-
-    /* text */
     font-family: 'Roboto Slab', serif;
     font-weight: 900;
     font-size: 25px;
-    color: white;
-   
+    color: white; 
 } 
 
 
 /* PAGINA DE JOGO */
 
-
-.conteudo {
-    display: flex;
-    
+h1{
+    text-align: center;
 }
 
-.hangMan {
-    margin: 0 5%;
+
+.container {
+    margin: 0 0;
+    display: flex; 
+    /* flex-direction: row;   */
+    justify-content: space-around;
 }
 
-.textForca {
-    width: 700px;
+#hangman {
+    margin:5%;
+    width: 30vw;
+    height: 30vh;
+}
+
+.play {
+    width: 100%;
     margin: 5% 0;
 }
 
-.textForca h2 {
+.play h4 {
+ padding: 0 15px;
+}
+
+.play span {
+    padding: 0 10px;
+}
+
+.play h2 {
     margin: 10% 0;
     margin-bottom: 0;
     padding: 5% 0;
     font-weight: 100;
 }
 
-.textForca h3 {
+.play h3 {
     background-color: #e100001f;
     width: 100%;
     padding: 0 15px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
-.textForca span {
-    padding: 0 5px;
+.play p {
+    margin: 0;
 }
 
 .input  {
@@ -94,24 +107,22 @@ h1 {
     font-size: 16px;
     background-color: rgba(169, 169, 169, 0.322);
     border: none;
-    height: 35px;
-    padding-left: 15px;
-    
+    margin: 2% 2.5%;
+    height: 7%;  
+    min-width: 5%; 
+    padding: 0 2%;
 }
 
 .insert{
     font-family: 'Roboto Slab', serif;
     font-size: 16px;
     color: white;
-
     background-color:#1EB511;
     border: none;
     border-radius: 20px;
-    width: 15%;
+    min-width: 10%;
     height: 35px;
-
-    margin: 25px;
-
+    margin:  2.5%;
     cursor: pointer;
 }
 
@@ -120,17 +131,13 @@ h1 {
     font-family: 'Roboto Slab', serif;
     font-size: 16px;
     color: white;
-
     background-color:#1157da;
     border: none;
     border-radius: 20px;
-    width: 15%;
+    min-width: 15%;
     height: 35px;
-
-    margin: 25px;
-
+    margin: 2.5%;
     cursor: pointer;
-
 }
 
 
@@ -157,8 +164,8 @@ h1 {
 
 .display {
     background: white;
-    width: 40%;
-    min-width: 300px;   
+    min-width: 10%;
+    min-width: 10%;   
     text-align: center;
     padding: 35px; 
     box-shadow: 6px 6px 6px 6px rgba(00, 00, 00, .1);
@@ -186,13 +193,25 @@ h1 {
     font-family: 'Roboto Slab', serif;
     font-size: 25px;
     color: white;
-
     background-color:#1157da;
     box-shadow: 0px 4px 4px 2px rgba(00, 00, 00, .3);
     border: none;
     border-radius: 20px;
-    width: 50%;
-    height: 50px;
+    min-width: 50%;
+    height: 35%;
     cursor: pointer;
-
 }
+
+
+@media only screen and (max-whidth: 1000px) {
+
+    html {
+        font-size: 13px;
+    }
+    .container{
+       display: flex;
+       flex-direction: column; 
+    }
+    
+}
+ 
