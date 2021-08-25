@@ -1,11 +1,8 @@
 // game
 const game = new Game(db, images) 
 
-
 // inicializar o metodo
 game.init()
-
-
 
 // dom
 const tips = document.getElementById("tips")
