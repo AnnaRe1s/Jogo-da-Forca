@@ -11,12 +11,10 @@ const db = [
 ]
 
 
-const images = [
-    {errorNumbers: 1, corresponding:"images/1_wrong_Thanos.png"},
-    {errorNumbers: 2, corresponding:"images/2_wrong_Thanos.png"},
-    {errorNumbers: 3, corresponding:"images/3_wrong_Thanos.png"},
-    {errorNumbers: 4, corresponding:"images/4_wrong_Thanos.png"},
-    {errorNumbers: 5, corresponding:"images/5_worng_Thanos.png"},
-    {errorNumbers: 6, corresponding:"images/6_thanos_hanged.png"},
-]
-
+const images = new Map([
+                       [1, "./images/1_wrong_Thanos.png"],
+                       [2, "./images/2_wrong_Thanos.png"],
+                       [3, "./images/3_wrong_Thanos.png"],
+                       [4, "./images/4_wrong_Thanos.png"],
+                       [5, "./images/5_worng_Thanos.png"],
+                       [6, "./images/6_thanos_hanged.png"]])

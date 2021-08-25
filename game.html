@@ -12,11 +12,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     
     <!-- css -->
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     
-    <!-- favitcon -->
-    <link rel="shortcut icon" href="images/gallows - favitcon.png" type="image/x-icon">
-
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/gallows_favicon.png" type="image/x-icon">
+    
     <title>Jogo da Forca</title>
 </head>
 
@@ -26,7 +26,7 @@
         <div class="conteudo">
 
         <div class="hangMan">  
-            <img id = "hangMan" src="images/gallows - image.png" alt="gallows">
+            <img id = "hangman" src="./images/gallows_image.png" alt="gallows">
 
         </div>
 
@@ -38,15 +38,16 @@
 
             <h3>Tentativas:<span id = attempts></span></h3>
                     
-            <input id="letterInput" class="input" for="adicionar uma letra" maxlength="1" type="text"  placeholder="Adicione uma letra" >
+            <input id="letterInput" class="input" for="adicionar uma letra" maxlength="1"  type="text"  placeholder="Adicione uma letra" >
             <button id="insert" class="insert" onclick="validateInput()">Adicionar</button>
             <p id="status"></p>
 
             <div>
-                <input id="guessInput" class="input" for="Adivinhar uma palavra" type="text"  placeholder="Adivinhar uma palavra" >
+                <input id="guessInput" class="input" for="Adivinhar palavra" type="text"  placeholder="Adivinhar uma palavra" >
                 <button id="btnGuess" class="guess" onclick="validateInput()">Adivinhar</button>
             </div>
-            
+            <p id="status"></p>
+
         </div> 
 
     </div> 
@@ -54,18 +55,18 @@
 
     <!-- modais para aparecer junto com a condicao de perda o vitoria -->
     <!-- modal de Vitoria  -->
-    <div id="modalVitory" class="modalBackground">
+    <div id="modalVictory" class="modalBackground">
         <div class="display"> 
-            <img src="images/you win!.png" alt="Voce ganhou o jogo">
+            <img src="./images/you win!.png" alt="Voce ganhou o jogo">
             <button class="btnModal">Jogar Novamente</button>
         </div> 
     </div>
     
 
      <!-- modal de derrota  -->
-     <div id="modalDerrota" class="modalBackground">
+     <div id="modalDefeat" class="modalBackground">
         <div class="display"> 
-            <img src="images/you lost.png" alt="Voce perdeu">
+            <img src="./images/you lost.png" alt="Voce perdeu">
             <button class="btnModal">Tentar Novamente</button>
         </div> 
     </div>
@@ -73,7 +74,8 @@
 
     
     <!-- javaScript -->
-    <script src="js/data.js"></script>
-    <script src="js/testando.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
