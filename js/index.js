@@ -35,7 +35,6 @@ function checkGameResult() {
         showModalVictory.classList.add('show')
         soundVictory.play()
         showModalVictory.addEventListener('click',() => {
-            console.log("Showing modal victory")
             showModalVictory.classList.remove("show")
             restart()
         })
