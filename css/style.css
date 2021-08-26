@@ -32,9 +32,12 @@ h1 {
     font-family: 'Roboto Slab', serif;
     font-weight: 900;
     font-size: 25px;
-    color: white; 
 } 
 
+.btnStart a {
+    text-decoration: none;
+    color:white
+}
 
 /* PAGINA DE JOGO */
 
