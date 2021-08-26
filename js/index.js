@@ -33,6 +33,7 @@ function checkGameResult() {
         showModalVictory.addEventListener('click',() => {
             showModalVictory.classList.remove("show")
             restart()
+            
         })
     } else if (game.isLostTheGame()) {
         showModalDefeat.classList.add('show')
@@ -40,6 +41,7 @@ function checkGameResult() {
         showModalDefeat.addEventListener('click',() => {
             showModalDefeat.classList.remove("show")
             restart()
+            
         })
     }
 }
@@ -108,8 +110,8 @@ btnInsert.addEventListener("click", () => {
     // Checando a occorrencia da letra posicao ou nao encontrada e atribuindo a uma variavel
     let occurrences = game.findLetterOccurrence(letter)
 
-    // condicao de vitoria e erro
-    checkGameResult()
+    // // condicao de vitoria e erro
+    // checkGameResult()
     
     // se a ocorrencia for um array vazio entre em attemps se nao adicione a letra
     if (occurrences.length === 0) {
