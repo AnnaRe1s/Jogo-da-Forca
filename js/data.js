@@ -12,9 +12,9 @@ const db = [
 
 
 const images = new Map([
-                       [1, "../images/1_homem_ferro.png"],
-                       [2, "../images/2_homem_ferro.png"],
-                       [3, "../images/3_homem_ferro.png"],
-                       [4, "../images/4_homem_ferro.png"],
-                       [5, "../images/5_homem_ferro.png"],
-                       [6, "../images/6_homem_ferro.png"]])
+                       [1, "images/1_homem_ferro.png"],
+                       [2, "images/2_homem_ferro.png"],
+                       [3, "images/3_homem_ferro.png"],
+                       [4, "images/4_homem_ferro.png"],
+                       [5, "images/5_homem_ferro.png"],
+                       [6, "images/6_homem_ferro.png"]])

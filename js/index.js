@@ -17,9 +17,9 @@ const showModalVictory = document.getElementById("modalVictory")
 const showModalDefeat = document.getElementById("modalDefeat")
 const hangman = document.getElementById("hangman")
 
-const addLetterSound = document.getElementById("addLetter")
-const soundVictory = document.getElementById("soundVictory")
-const soundDefaut = document.getElementById("soundDefeat")
+const addLetterSound = new Audio("./audio/add_letter.mp3")
+const soundVictory = new Audio("./audio/victory_sound.mp3")
+const soundDefaut = new Audio("./audio/defeat_sound.mp3")
 
 
 // iniciando dicas
@@ -35,18 +35,17 @@ function checkGameResult() {
         showModalVictory.classList.add('show')
         soundVictory.play()
         showModalVictory.addEventListener('click',() => {
+            console.log("Showing modal victory")
             showModalVictory.classList.remove("show")
             restart()
-            return
-            
         })
     } else if (game.isLostTheGame()) {
         showModalDefeat.classList.add('show')
         soundDefaut.play()
         showModalDefeat.addEventListener('click',() => {
+            console.log("Showing modal defeat")
             showModalDefeat.classList.remove("show")
             restart()
-            return
         })
     }
 }
@@ -57,7 +56,7 @@ function restart() {
    tips.innerHTML = " " + game.getCategory()
    words.innerHTML = game.getHiddenWord()
    attempts.innerHTML = ""
-   hangman.setAttribute("src", "../images/gallows_image.png")
+   hangman.setAttribute("src", "images/gallows_image.png")
    letterInput.value = ""
    letterInput.style.border = "none"
    guessInput.value = ""
@@ -116,23 +115,24 @@ btnInsert.addEventListener("click", () => {
     let occurrences = game.findLetterOccurrence(letter)
 
     // // condicao de vitoria e erro
-    // checkGameResult()
+    checkGameResult()
     
     // se a ocorrencia for um array vazio entre em attemps se nao adicione a letra
     if (occurrences.length === 0) {
         game.storeErrors(letter)
         if (game.isLetter(letter) ) {
-            attempts.innerHTML = game.showWrongLetter()
-            hangman.setAttribute("src", game.getErrorImage())
+            attempts.innerHTML = Array.from(game.wrong.values()).join(" ")
+            let errorImage = game.getErrorImage()
+            console.log("Handling error: ", errorImage)
+            if (errorImage !== undefined)
+                hangman.setAttribute("src", errorImage)
         }
         return
     } else {
         game.addLetters(occurrences, letter)
         words.innerHTML = game.capitalize(game.getHiddenWord()) 
     }
-
-
-    checkGameResult()
+    // checkGameResult()
 
 })
 
