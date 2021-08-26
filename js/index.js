@@ -17,6 +17,10 @@ const showModalVictory = document.getElementById("modalVictory")
 const showModalDefeat = document.getElementById("modalDefeat")
 const hangman = document.getElementById("hangman")
 
+const addLetterSound = new Audio("../audio/add_letter.mp3")
+const soundVictory = new Audio("../audio/victory_sound.mp3")
+const soundDefaut = new Audio("../audio/defeat_sound.mp3")
+
 
 // iniciando dicas
 tips.innerHTML = game.getCategory()
@@ -29,7 +33,7 @@ function checkGameResult() {
    // verifica se ganhou ou perdeu o jogo 
     if (game.isWonTheGame()) {
         showModalVictory.classList.add('show')
-        new Audio("../audio/victory_sound.mp3").play()
+        soundVictory.play()
         showModalVictory.addEventListener('click',() => {
             showModalVictory.classList.remove("show")
             restart()
@@ -37,7 +41,7 @@ function checkGameResult() {
         })
     } else if (game.isLostTheGame()) {
         showModalDefeat.classList.add('show')
-        new Audio("../audio/defeat_sound.mp3").play()
+        soundDefaut.play()
         showModalDefeat.addEventListener('click',() => {
             showModalDefeat.classList.remove("show")
             restart()
@@ -99,7 +103,7 @@ function validateInput() {
 
 // iniciando o meu evento de click para pegar a letra
 btnInsert.addEventListener("click", () => {
-    new Audio("../audio/add_letter.mp3").play()
+    addLetterSound.play()
 
     // pegando a letra do input tranformando em minuscua e atribuindo a uma nova variavel
     let letter = letterInput.value.toLowerCase()
@@ -132,20 +136,20 @@ btnInsert.addEventListener("click", () => {
 // iniciando meu evento de iniciar palavra 
 
 btnGuess.addEventListener("click", () => {
-    new Audio("../audio/add_letter.mp3").play()
+    addLetterSound.play()
     
     let guess = guessInput.value.toLowerCase()
     
     if (guess === game.getWord()) {
         showModalVictory.classList.add('show') 
-        new Audio("../audio/victory_sound.mp3").play()
+        soundVictory.play()
         showModalVictory.addEventListener('click',() => {
             showModalVictory.classList.remove("show")
             restart()
         })
     } else if (guess !== game.getWord()) {
         showModalDefeat.classList.add('show')
-        new Audio("../audio/defeat_sound.mp3").play()
+        soundDefaut.play()
         showModalDefeat.addEventListener('click',() => {
             showModalDefeat.classList.remove("show")
             restart()
