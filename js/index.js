@@ -17,9 +17,9 @@ const showModalVictory = document.getElementById("modalVictory")
 const showModalDefeat = document.getElementById("modalDefeat")
 const hangman = document.getElementById("hangman")
 
-const addLetterSound = new Audio("../audio/add_letter.mp3")
-const soundVictory = new Audio("../audio/victory_sound.mp3")
-const soundDefaut = new Audio("../audio/defeat_sound.mp3")
+const addLetterSound = new Audio("./audio/add_letter.mp3")
+const soundVictory = new Audio("./audio/victory_sound.mp3")
+const soundDefaut = new Audio("./audio/defeat_sound.mp3")
 
 
 // iniciando dicas
@@ -56,7 +56,7 @@ function restart() {
    tips.innerHTML = " " + game.getCategory()
    words.innerHTML = game.getHiddenWord()
    attempts.innerHTML = ""
-   hangman.setAttribute("src", "../images/gallows_image.png")
+   hangman.setAttribute("src", "./images/gallows_image.png")
    letterInput.value = ""
    letterInput.style.border = "none"
    guessInput.value = ""
