@@ -17,9 +17,9 @@ const showModalVictory = document.getElementById("modalVictory")
 const showModalDefeat = document.getElementById("modalDefeat")
 const hangman = document.getElementById("hangman")
 
-const addLetterSound = new Audio("../audio/add_letter.mp3")
-const soundVictory = new Audio("../audio/victory_sound.mp3")
-const soundDefaut = new Audio("../audio/defeat_sound.mp3")
+const addLetterSound = document.getElementById("addLetter")
+const soundVictory = document.getElementById("soundVictory")
+const soundDefaut = document.getElementById("soundDefeat")
 
 
 // iniciando dicas
@@ -37,6 +37,7 @@ function checkGameResult() {
         showModalVictory.addEventListener('click',() => {
             showModalVictory.classList.remove("show")
             restart()
+            return
             
         })
     } else if (game.isLostTheGame()) {
@@ -45,7 +46,7 @@ function checkGameResult() {
         showModalDefeat.addEventListener('click',() => {
             showModalDefeat.classList.remove("show")
             restart()
-            
+            return
         })
     }
 }
@@ -56,7 +57,7 @@ function restart() {
    tips.innerHTML = " " + game.getCategory()
    words.innerHTML = game.getHiddenWord()
    attempts.innerHTML = ""
-   hangman.setAttribute("src", "../images/gallows_image.png")
+   hangman.setAttribute("src", "./images/gallows_image.png")
    letterInput.value = ""
    letterInput.style.border = "none"
    guessInput.value = ""
@@ -121,7 +122,7 @@ btnInsert.addEventListener("click", () => {
     if (occurrences.length === 0) {
         game.storeErrors(letter)
         if (game.isLetter(letter) ) {
-            attempts.innerHTML = Array.from(game.wrong.values()).join(" ")
+            attempts.innerHTML = game.showWrongLetter()
             hangman.setAttribute("src", game.getErrorImage())
         }
         return
@@ -129,6 +130,8 @@ btnInsert.addEventListener("click", () => {
         game.addLetters(occurrences, letter)
         words.innerHTML = game.capitalize(game.getHiddenWord()) 
     }
+
+
     checkGameResult()
 
 })

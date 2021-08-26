@@ -7,7 +7,7 @@ class Game {
         this.category = ""
         this.positionWord = 0
         this.word = ""
-        this.wrong = new Set()
+        this.wrong = []
         this.hiddenLetters = []
     }
 
@@ -61,7 +61,7 @@ class Game {
 
     storeErrors(letter) {
         if (this.isLetter(letter)) {
-            this.wrong.add(letter) 
+            this.wrong.push(letter) 
         } 
     }
 
@@ -75,12 +75,15 @@ class Game {
     }
 
     isLostTheGame() {
-        return this.wrong.size === 5
+        return this.wrong.length === 5
     }
 
     isLetter(letter) {
        return ((letter >= "a" && letter <= "z") || (letter >= "A" && letter <= "Z"))
     }  
 
+    showWrongLetter() {
+        return this.wrong.join(" ")
+    }
 }
 
