@@ -113,6 +113,7 @@ btnInsert.addEventListener("click", () => {
     // Checando a occorrencia da letra posicao ou nao encontrada e atribuindo a uma variavel
     let occurrences = game.findLetterOccurrence(letter)
 
+
     // se a ocorrencia for um array vazio entre em attemps se nao adicione a letra
     if (occurrences.length === 0) {
         game.storeErrors(letter)
@@ -132,6 +133,8 @@ btnInsert.addEventListener("click", () => {
         // condicao de vitoria e erro
         checkGameResult()
     }
+
+        
 
 })
 
