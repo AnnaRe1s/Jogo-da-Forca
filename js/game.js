@@ -75,7 +75,7 @@ class Game {
     }
 
     isLostTheGame() {
-        return this.wrong.size === 5
+        return this.wrong.size === 6
     }
 
     isLetter(letter) {

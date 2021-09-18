@@ -1,17 +1,3 @@
-/* Cores e tamanho de letrdas usadas no figma
-botao iniciar
-    botao-cor: 00C6E1 transparencia 40% blur: 20  y: 4  x: 0 
-    letra-  cor:white  tamanho:50
-botao de adicionar letra 
-    botao- cor: 1EB511 transparencia 25% blur: 4  y: 4  x: 0 
-    letra - cor: white  tamanho:15
-barra de letras erradas
-    barra-  cor: E10000 transparencia 14%
-    letra: black
-tamanho das letras
-    nome do jogo tamanho:60 
-    dica  tamanho:25 
-    letras: 40 */ 
 
 body {
     font-family: 'Roboto Slab', serif;
@@ -35,7 +21,6 @@ h1 {
     margin-bottom: 0%;
 }
 
-
 .btnStart {
     background-color:#00C6E1;
     border: none ;
@@ -47,9 +32,12 @@ h1 {
     font-family: 'Roboto Slab', serif;
     font-weight: 900;
     font-size: 25px;
-    color: white; 
 } 
 
+.btnStart a {
+    text-decoration: none;
+    color:white
+}
 
 /* PAGINA DE JOGO */
 
@@ -67,8 +55,6 @@ h1{
 
 #hangman {
     margin:5%;
-    width: 30vw;
-    height: 30vh;
 }
 
 .play {
@@ -202,16 +188,3 @@ h1{
     cursor: pointer;
 }
 
-
-@media only screen and (max-whidth: 1000px) {
-
-    html {
-        font-size: 13px;
-    }
-    .container{
-       display: flex;
-       flex-direction: column; 
-    }
-    
-}
- 

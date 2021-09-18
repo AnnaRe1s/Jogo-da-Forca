@@ -12,10 +12,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     
     <!-- css -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css"/>
     
     <!-- favicon -->
-    <link rel="shortcut icon" href="./images/gallows_favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./gallows_favicon.png" type="image/x-icon"/>
     
     <title>Jogo da Forca</title>
 </head>
@@ -25,9 +25,9 @@
         <h1>Jogo da forca</h1>
 <div class="container">
 
-        <!-- <div class="hangMan">   -->
-            <img id = "hangman" src="./images/gallows_image.png" alt="gallows">
-        <!-- </div> -->
+        <div class="hangMan">  
+            <img id = "hangman" src="./images/gallows_image.png" alt="gallows"/>
+        </div>
 
         <div class="play">
 
@@ -53,9 +53,9 @@
 
     <!-- modais para aparecer junto com a condicao de perda o vitoria -->
     <!-- modal de Vitoria  -->
-    <div id="modalVictory" class="modalBackground">
-        <div class="display"> 
-            <img src="./images/you win!.png" alt="Voce ganhou o jogo">
+    <div id="modalVictory" class="modalBackground">     <!--  tela preta fundo -->
+        <div class="display">  <!--  aparecer imagem ou botao  -->
+            <img src="images/win.png" alt="Voce ganhou o jogo"/>
             <button class="btnModal">Jogar Novamente</button>
         </div> 
     </div>
@@ -64,7 +64,7 @@
      <!-- modal de derrota  -->
      <div id="modalDefeat" class="modalBackground">
         <div class="display"> 
-            <img src="./images/you lost.png" alt="Voce perdeu">
+            <img src="images/lost.png" alt="Voce perdeu"/>
             <button class="btnModal">Tentar Novamente</button>
         </div> 
     </div>

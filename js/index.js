@@ -1,11 +1,8 @@
 // game
 const game = new Game(db, images) 
 
-
 // inicializar o metodo
 game.init()
-
-
 
 // dom
 const tips = document.getElementById("tips")
@@ -20,6 +17,10 @@ const showModalVictory = document.getElementById("modalVictory")
 const showModalDefeat = document.getElementById("modalDefeat")
 const hangman = document.getElementById("hangman")
 
+const addLetterSound = new Audio("./audio/add_letter.mp3")
+const soundVictory = new Audio("./audio/victory_sound.mp3")
+const soundDefaut = new Audio("./audio/defeat_sound.mp3")
+
 
 // iniciando dicas
 tips.innerHTML = game.getCategory()
@@ -32,13 +33,16 @@ function checkGameResult() {
    // verifica se ganhou ou perdeu o jogo 
     if (game.isWonTheGame()) {
         showModalVictory.classList.add('show')
+        soundVictory.play()
         showModalVictory.addEventListener('click',() => {
             showModalVictory.classList.remove("show")
             restart()
         })
     } else if (game.isLostTheGame()) {
         showModalDefeat.classList.add('show')
+        soundDefaut.play()
         showModalDefeat.addEventListener('click',() => {
+            console.log("Showing modal defeat")
             showModalDefeat.classList.remove("show")
             restart()
         })
@@ -51,7 +55,7 @@ function restart() {
    tips.innerHTML = " " + game.getCategory()
    words.innerHTML = game.getHiddenWord()
    attempts.innerHTML = ""
-   hangman.setAttribute("src", "./images/gallows_image.png")
+   hangman.setAttribute("src", "images/gallows_image.png")
    letterInput.value = ""
    letterInput.style.border = "none"
    guessInput.value = ""
@@ -98,46 +102,59 @@ function validateInput() {
 
 // iniciando o meu evento de click para pegar a letra
 btnInsert.addEventListener("click", () => {
+    addLetterSound.play()
+
     // pegando a letra do input tranformando em minuscua e atribuindo a uma nova variavel
     let letter = letterInput.value.toLowerCase()
 
-    // condicao de vitoria e erro
-    checkGameResult()
+    // limpa o input
+    letterInput.value = ""
 
     // Checando a occorrencia da letra posicao ou nao encontrada e atribuindo a uma variavel
     let occurrences = game.findLetterOccurrence(letter)
 
-    // limpa o input
-    letterInput.value = ""
-    
+
     // se a ocorrencia for um array vazio entre em attemps se nao adicione a letra
     if (occurrences.length === 0) {
         game.storeErrors(letter)
+        // condicao de vitoria e erro
+        checkGameResult()
         if (game.isLetter(letter) ) {
             attempts.innerHTML = Array.from(game.wrong.values()).join(" ")
-            hangman.setAttribute("src", game.getErrorImage())
+            let errorImage = game.getErrorImage()
+            if (errorImage !== undefined) {
+                hangman.setAttribute("src", errorImage)
+            }
         }
         return
     } else {
         game.addLetters(occurrences, letter)
         words.innerHTML = game.capitalize(game.getHiddenWord()) 
+        // condicao de vitoria e erro
+        checkGameResult()
     }
+
+        
+
 })
 
 // iniciando meu evento de iniciar palavra 
 
 btnGuess.addEventListener("click", () => {
+    addLetterSound.play()
     
     let guess = guessInput.value.toLowerCase()
     
     if (guess === game.getWord()) {
         showModalVictory.classList.add('show') 
+        soundVictory.play()
         showModalVictory.addEventListener('click',() => {
             showModalVictory.classList.remove("show")
             restart()
         })
     } else if (guess !== game.getWord()) {
         showModalDefeat.classList.add('show')
+        soundDefaut.play()
         showModalDefeat.addEventListener('click',() => {
             showModalDefeat.classList.remove("show")
             restart()

@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;900&display=swap" rel="stylesheet">
     
     <!-- css -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css"/>
 
     <!-- favicon  -->
-    <link rel="shortcut icon" href="./images/gallows_favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./gallows_favicon.png" type="image/x-icon"/>
 
     <title>Jogo da forca</title>
 </head>
@@ -24,17 +24,16 @@
     <!-- Imagem e texto da forca -->
     <div class="logo">
         <h1>Jogo da Forca</h1>
-        <img src="./images/gallows_image.png" alt="Ilustracao de uma forca">
+        <img src="./images/gallows_image.png" alt="Ilustracao de uma forca"/>
     
         <!-- botao para trocar de pagina -->
         <!-- <button id="btnStart" class="btnStart" >let`s Bora!</button> -->
-        <button class="btnStart" onclick="start()">let`s Bora!</button>
+        <button class="btnStart" ><a href="./game.html"> Let's bora </a>
+        </button>
     </div>
-    <!-- JavaScript -->
-      <script>
-        function start() {
-            location.href="./game.html"
-        }
-    </script>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
