@@ -1,4 +1,4 @@
-# Hangman game!
+<h1><a href="https://annare1s.github.io/Jogo-da-Forca"> HANGMAN </a></h1>
 
 
 ### About the Game
